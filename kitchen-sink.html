@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Framework Kitchen Sink</title>
+  <style>
+    /* ======================
+       BASE STYLES
+    ===================== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333; background-color: #fff; padding: 1em; }
+    h1,h2,h3,h4,h5,h6 { margin-bottom: 0.5em; font-weight: 600; }
+    p { margin-bottom: 1em; }
+    small { font-size: 0.8em; color: #666; }
+    .lead { font-size: 1.25em; font-weight: 400; }
+
+    /* ======================
+       TYPOGRAPHY SCALE
+    ===================== */
+    .text-xs { font-size: 12px; font-weight: 300; }
+    .text-sm { font-size: 14px; font-weight: 400; }
+    .text-base { font-size: 16px; font-weight: 400; }
+    .text-lg { font-size: 18px; font-weight: 500; }
+    .text-xl { font-size: 20px; font-weight: 600; }
+    .text-2xl { font-size: 24px; font-weight: 700; }
+    .text-3xl { font-size: 30px; font-weight: 800; }
+
+    /* ======================
+       COLORS
+    ===================== */
+    .color { display: inline-block; padding: 1em; margin: 0.25em; color: #fff; font-weight: bold; text-align: center; width: 100px; border-radius: 4px; }
+    .color-primary { background-color: #007BFF; }
+    .color-secondary { background-color: #6C757D; }
+    .color-accent { background-color: #6610f2; }
+    .color-success { background-color: #28A745; }
+    .color-warning { background-color: #FFC107; color: #333; }
+    .color-danger { background-color: #DC3545; }
+    .color-info { background-color: #17A2B8; }
+    .color-light { background-color: #F8F9FA; color: #333; }
+    .color-dark { background-color: #343A40; }
+
+    /* ======================
+       BUTTONS
+    ===================== */
+    .btn { padding: 0.5em 1em; border-radius: 4px; cursor: pointer; border: none; font-size: 1em; transition: background 0.3s; margin: 0.25em; }
+    .btn-primary { background: #007BFF; color: #fff; }
+    .btn-primary:hover { background: #0056b3; }
+    .btn-secondary { background: #6C757D; color: #fff; }
+    .btn-secondary:hover { background: #5a6268; }
+    .btn-accent { background: #6610f2; color: #fff; }
+    .btn-accent:hover { background: #520dc2; }
+    .btn-outline { background: transparent; border: 2px solid #007BFF; color: #007BFF; }
+    .btn-outline:hover { background: #007BFF; color: #fff; }
+    .btn-disabled, .btn-disabled:hover { background: #ccc; color: #666; cursor: not-allowed; }
+
+    /* ======================
+       FORMS
+    ===================== */
+    input, textarea, select { display: block; width: 100%; padding: 0.5em; margin-bottom: 1em; border-radius: 4px; border: 1px solid #ccc; }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #007BFF; box-shadow: 0 0 3px rgba(0,123,255,0.5); }
+    .switch { position: relative; width: 40px; height: 20px; -webkit-appearance: none; background: #ccc; border-radius: 20px; outline: none; cursor: pointer; transition: 0.3s; }
+    .switch:checked { background: #007BFF; }
+    .switch::before { content: ''; position: absolute; width: 18px; height: 18px; border-radius: 50%; top: 1px; left: 1px; background: #fff; transition: 0.3s; }
+    .switch:checked::before { transform: translateX(20px); }
+
+    /* ======================
+       TABLES
+    ===================== */
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1em; }
+    table th, table td { padding: 0.5em; border: 1px solid #ccc; text-align: left; }
+    .table-striped tbody tr:nth-child(odd) { background-color: #f2f2f2; }
+    .table-hover tbody tr:hover { background-color: #e9ecef; }
+
+    /* ======================
+       LISTS
+    ===================== */
+    ul, ol { margin-bottom: 1em; padding-left: 1.5em; }
+    dl dt { font-weight: 600; }
+    dl dd { margin-bottom: 0.5em; }
+
+    /* ======================
+       GRID SYSTEM
+    ===================== */
+    .flex-grid { display: flex; gap: 1em; flex-wrap: wrap; margin-bottom: 1em; }
+    .flex-grid-2 .flex-item { flex: 0 0 calc(50% - 0.5em); }
+    .flex-grid-3 .flex-item { flex: 0 0 calc(33.333% - 0.66em); }
+    .flex-grid-4 .flex-item { flex: 0 0 calc(25% - 0.75em); }
+    .flex-item { background: #e9ecef; padding: 1em; text-align: center; border-radius: 4px; }
+    .css-grid { display: grid; gap: 1em; margin-bottom: 1em; }
+    .css-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .css-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .css-grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-item { background: #f8f9fa; padding: 1em; text-align: center; border: 1px solid #ccc; border-radius: 4px; }
+    .responsive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1em; }
+
+    /* ======================
+       COMPONENTS
+    ===================== */
+    .card { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 1em; margin-bottom: 1em; }
+    .alert { padding: 0.75em 1em; border-radius: 4px; margin-bottom: 1em; }
+    .alert-success { background: #28a745; color: #fff; }
+    .alert-warning { background: #ffc107; color: #333; }
+    .alert-danger { background: #dc3545; color: #fff; }
+    .badge { padding: 0.25em 0.5em; border-radius: 12px; font-size: 0.8em; margin-right: 0.25em; }
+    .badge-primary { background: #007BFF; color: #fff; }
+    .badge-success { background: #28A745; color: #fff; }
+    .badge-danger { background: #dc3545; color: #fff; }
+    .tabs { display: flex; margin-bottom: 1em; }
+    .tab { padding: 0.5em 1em; border: 1px solid #ccc; cursor: pointer; background: #f8f9fa; margin-right: 0.25em; }
+    .tab.active { background: #007BFF; color: #fff; border-color: #007BFF; }
+    .accordion .accordion-item { margin-bottom: 0.5em; border: 1px solid #ccc; border-radius: 4px; }
+    .accordion-toggle { width: 100%; text-align: left; padding: 0.5em 1em; background: #f8f9fa; border: none; cursor: pointer; }
+    .accordion-content { display: none; padding: 0.5em 1em; }
+    .progress { width: 100%; background: #e9ecef; border-radius: 4px; height: 1em; margin-bottom: 1em; }
+    .progress-bar { height: 100%; background: #007BFF; border-radius: 4px; width: 70%; }
+
+    /* ======================
+       MODAL
+    ===================== */
+    .modal { display: none; position: fixed; top: 0; left:0; width: 100%; height:100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+    .modal-content { background: #fff; padding: 1em; border-radius: 4px; width: 300px; position: relative; }
+    .modal-close { position: absolute; top: 0.25em; right: 0.5em; cursor: pointer; font-size: 1.25em; }
+
+    /* ======================
+       DROPDOWNS
+    ===================== */
+    .dropdown { position: relative; display: inline-block; margin: 0.5em 0; }
+    .dropdown-toggle { padding: 0.5em 1em; background: #007BFF; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ccc; border-radius: 4px; list-style: none; min-width: 150px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 100; padding: 0.5em 0; }
+    .dropdown-menu.show { display: block; }
+    .dropdown-menu li a { display: block; padding: 0.5em 1em; color: #333; text-decoration: none; }
+    .dropdown-menu li a:hover { background: #007BFF; color: #fff; }
+
+    /* ======================
+       TOOLTIPS
+    ===================== */
+    [data-tooltip] { position: relative; cursor: pointer; }
+    .tooltip { position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 0.25em 0.5em; border-radius: 4px; white-space: nowrap; font-size: 0.75em; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+    .tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #333 transparent transparent transparent; }
+
+    /* ======================
+       NAVBAR
+    ===================== */
+    .demo-navbar { background: #007BFF; padding: 0.5em 1em; border-radius: 4px; margin-bottom: 2em; }
+    .navbar-list { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 1em; }
+    .navbar-list li { position: relative; }
+    .navbar-list a, .navbar-list button { color: #fff; text-decoration: none; padding: 0.5em 0.75em; display: block; border-radius: 4px; }
+    .navbar-list a:hover, .navbar-list button:hover { background: rgba(255,255,255,0.2); }
+    .navbar-list .dropdown-menu { top: 100%; left: 0; min-width: 150px; }
+
+    /* ======================
+       HERO SECTION
+    ===================== */
+    .hero-section { display: flex; align-items: center; justify-content: space-between; background: #f8f9fa; padding: 2em 1em; gap: 2em; border-radius: 4px; margin-bottom: 2em; }
+    .hero-content { flex: 1; }
+    .hero-content h1 { font-size: 2.5rem; margin-bottom: 0.5em; }
+    .hero-content p.lead { font-size: 1.25rem; margin-bottom: 1.5em; }
+    .hero-buttons .btn { margin-right: 0.5em; }
+    .hero-image { flex: 1; text-align: center; }
+    .hero-image img { max-width: 100%; border-radius: 8px; }
+
+    /* ======================
+       FOOTER
+    ===================== */
+    .demo-footer { background: #343a40; color: #fff; padding: 2em 1em; margin-top: 2em; border-radius: 4px; }
+    .demo-footer .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 1em; }
+    .demo-footer p { margin: 0; }
+    .footer-links { list-style: none; display: flex; gap: 1em; }
+    .footer-links li a { color: #fff; text-decoration: none; }
+    .footer-links li a:hover { text-decoration: underline; }
+
+    /* ======================
+       UTILITIES
+    ===================== */
+    .m-1 { margin: 0.25em; }
+    .m-2 { margin: 0.5em; }
+    .m-3 { margin: 1em; }
+    .p-1 { padding: 0.25em; }
+    .p-2 { padding: 0.5em; }
+    .p-3 { padding: 1em; }
+    .text-left { text-align: left; }
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    .d-block { display: block; }
+    .d-inline { display: inline; }
+    .d-inline-block { display: inline-block; }
+    .d-flex { display: flex; }
+    .d-grid { display: grid; }
+
+    /* ======================
+       MEDIA QUERIES
+    ===================== */
+    @media (max-width: 768px) {
+      .flex-grid-2 .flex-item, .flex-grid-3 .flex-item, .flex-grid-4 .flex-item { flex: 0 0 100%; }
+      .navbar-list { flex-direction: column; align-items: flex-start; }
+      .navbar-list li { width: 100%; }
+      .navbar-list a, .navbar-list button { width: 100%; }
+      .hero-section { flex-direction: column; text-align: center; }
+      .hero-buttons .btn { display: block; margin: 0.5em auto; }
+      .demo-footer .footer-content { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======================
+       DEMO NAVBAR
+  ====================== -->
+  <nav class="demo-navbar">
+    <ul class="navbar-list">
+      <li><a href="#" data-tooltip="Go to Home">Home</a></li>
+      <li><a href="#" data-tooltip="View About page">About</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Development</a></li>
+          <li><a href="#">SEO</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-tooltip="Contact us">Contact</a></li>
+      <li><button class="btn btn-primary" data-tooltip="Login button">Login</button></li>
+    </ul>
+  </nav>
+
+  <!-- ======================
+       HERO SECTION
+  ====================== -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to Your Framework</h1>
+      <p class="lead">Build responsive, fully styled websites quickly with your custom frontend framework.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary">Get Started</button>
+        <button class="btn btn-secondary">Learn More</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/400x250" alt="Demo Image">
+    </div>
+  </section>
+
+  <!-- ======================
+       TYPOGRAPHY TEST
+  ====================== -->
+  <section>
+    <h2>Typography</h2>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p class="lead">Lead paragraph text for testing typography scale.</p>
+    <p>Normal paragraph text for body content testing.</p>
+    <small>Small text for fine print or metadata.</small>
+
+    <h2>Typography Scale</h2>
+    <div class="typography-scale">
+      <p class="text-xs">XS - 12px / Light</p>
+      <p class="text-sm">SM - 14px / Regular</p>
+      <p class="text-base">BASE - 16px / Regular</p>
+      <p class="text-lg">LG - 18px / Medium</p>
+      <p class="text-xl">XL - 20px / Bold</p>
+      <p class="text-2xl">2XL - 24px / Bold</p>
+      <p class="text-3xl">3XL - 30px / Extra Bold</p>
+    </div>
+  </section>
+
+  <!-- ======================
+       COLOR PALETTE
+  ====================== -->
+  <section>
+    <h2>Color Palette</h2>
+    <div class="color color-primary">Primary</div>
+    <div class="color color-secondary">Secondary</div>
+    <div class="color color-accent">Accent</div>
+    <div class="color color-success">Success</div>
+    <div class="color color-warning">Warning</div>
+    <div class="color color-danger">Danger</div>
+    <div class="color color-info">Info</div>
+    <div class="color color-light">Light</div>
+    <div class="color color-dark">Dark</div>
+  </section>
+
+  <!-- ======================
+       BUTTONS
+  ====================== -->
+  <section>
+    <h2>Buttons</h2>
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-accent">Accent</button>
+    <button class="btn btn-outline">Outline</button>
+    <button class="btn btn-disabled">Disabled</button>
+  </section>
+
+  <!-- ======================
+       FORMS
+  ====================== -->
+  <section>
+    <h2>Forms</h2>
+    <input type="text" placeholder="Text input">
+    <textarea placeholder="Textarea"></textarea>
+    <select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
+    <label>Toggle Switch:
+      <input type="checkbox" class="switch">
+    </label>
+    <form>
+      <label for="text-input">Text Input</label>
+      <input type="text" id="text-input" placeholder="Enter text">
+
+      <label for="textarea">Textarea</label>
+      <textarea id="textarea" rows="4" placeholder="Enter more text"></textarea>
+
+      <label for="select">Select</label>
+      <select id="select">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+
+      <fieldset>
+        <legend>Radio Buttons</legend>
+        <label><input type="radio" name="radio" value="1"> Option 1</label>
+        <label><input type="radio" name="radio" value="2"> Option 2</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Checkboxes</legend>
+        <label><input type="checkbox"> Check me</label>
+        <label><input type="checkbox"> Or me</label>
+      </fieldset>
+
+      <!-- Additional form elements -->
+      <label for="switch">Switch</label>
+      <input type="checkbox" id="switch" class="switch">
+
+      <label for="range">Range</label>
+      <input type="range" id="range" min="0" max="100">
+
+      <label for="file">File Upload</label>
+      <input type="file" id="file">
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+
+  <!-- ======================
+       TABLES
+  ====================== -->
+  <section>
+    <h2>Tables</h2>
+    <table>
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+          </tr>
+          <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+          </tr>
+          <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+          </tr>
+        </tbody>
+      </table>
+    <table class="table-striped table-hover">
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>John</td><td>john@example.com</td><td>Active</td></tr>
+        <tr><td>Jane</td><td>jane@example.com</td><td>Inactive</td></tr>
+        <tr><td>Mike</td><td>mike@example.com</td><td>Active</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ======================
+       LISTS
+  ====================== -->
+  <section>
+    <h2>Lists</h2>
+    <ul><li>Unordered Item 1</li><li>Unordered Item 2</li><li>Unordered Item 3</li></ul>
+    <ol><li>Ordered Item 1</li><li>Ordered Item 2</li><li>Ordered Item 3</li></ol>
+    <dl>
+      <dt>Term 1</dt><dd>Description 1</dd>
+      <dt>Term 2</dt><dd>Description 2</dd>
+    </dl>
+  </section>
+
+
+  <!-- ======================
+       Flexbox Grid
+  ====================== -->
+  <h3>Flexbox Grid</h3>
+  <div class="flex-grid flex-grid-2">
+    <div class="flex-item">1/2</div>
+    <div class="flex-item">1/2</div>
+  </div>
+  <div class="flex-grid flex-grid-3">
+    <div class="flex-item">1/3</div>
+    <div class="flex-item">1/3</div>
+    <div class="flex-item">1/3</div>
+  </div>
+  <div class="flex-grid flex-grid-4">
+    <div class="flex-item">1/4</div>
+    <div class="flex-item">1/4</div>
+    <div class="flex-item">1/4</div>
+    <div class="flex-item">1/4</div>
+  </div>
+
+
+  <!-- ======================
+       CSS Grid
+  ====================== -->
+  <h3>CSS Grid</h3>
+  <div class="css-grid css-grid-2">
+    <div class="grid-item">1/2</div>
+    <div class="grid-item">1/2</div>
+  </div>
+  <div class="css-grid css-grid-3">
+    <div class="grid-item">1/3</div>
+    <div class="grid-item">1/3</div>
+    <div class="grid-item">1/3</div>
+  </div>
+  <div class="css-grid css-grid-4">
+    <div class="grid-item">1/4</div>
+    <div class="grid-item">1/4</div>
+    <div class="grid-item">1/4</div>
+    <div class="grid-item">1/4</div>
+  </div>
+
+
+  <!-- ======================
+       Responsive Grid
+  ====================== -->
+  <h3>Responsive Grid</h3>
+  <div class="responsive-grid">
+    <div class="grid-item">Item 1</div>
+    <div class="grid-item">Item 2</div>
+    <div class="grid-item">Item 3</div>
+    <div class="grid-item">Item 4</div>
+  </div>
+
+
+  <!-- ======================
+       CARDS
+  ====================== -->
+  <section>
+    <h2>Cards</h2>
+    <div class="card">
+      <h4>Card Title</h4>
+        <p>Card body content.</p>
+    </div>
+  </section>
+
+  <!-- ======================
+       ALERTS
+  ====================== -->
+  <section>
+    <h2>Alerts</h2>
+    <div class="alert alert-success">Success alert</div>
+    <div class="alert alert-warning">Warning alert</div>
+    <div class="alert alert-danger">Danger alert</div>
+  </section>
+
+  <!-- ======================
+       BADGES
+  ====================== -->
+  <section>
+    <h2>Badges</h2>
+    <span class="badge badge-primary">Primary</span>
+    <span class="badge badge-success">Success</span>
+    <span class="badge badge-danger">Danger</span>
+  </section>
+
+
+  <!-- ======================
+       Media
+  ====================== -->
+  <h3>Media</h3>
+  <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+  <video controls width="250">
+    <source src="sample.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+
+  <!-- ======================
+       Breadcrumbs
+  ====================== -->
+  <h3>Breadcrumbs</h3>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li>Data</li>
+    </ol>
+  </nav>
+
+
+  <!-- ======================
+       PAGINATION
+  ====================== -->
+  <h3>Pagination</h3>
+  <ul class="pagination">
+    <li><a href="#">Prev</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+
+  <!-- ======================
+       TABS
+  ====================== -->
+  <section>
+    <h2>Tabs</h2>
+    <div class="tabs">
+      <div class="tab active">Tab 1</div>
+      <div class="tab">Tab 2</div>
+      <div class="tab">Tab 3</div>
+    </div>
+  </section>
+
+  <!-- ======================
+       ACCORDION
+  ====================== -->
+  <section>
+    <h2>Accordion</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-toggle">Accordion 1</button>
+        <div class="accordion-content">Content 1</div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-toggle">Accordion 2</button>
+        <div class="accordion-content">Content 2</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================
+       PROGRESS
+  ====================== -->
+  <section>
+    <h2>Progress</h2>
+    <div class="progress"><div class="progress-bar" style="width: 70%;"></div></div>
+  </section>
+
+  <!-- ======================
+       DROPDOWNS
+  ====================== -->
+  <section>
+    <h2>Dropdowns</h2>
+    <div class="dropdown">
+      <button class="dropdown-toggle">Dropdown</button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Action 1</a></li>
+        <li><a href="#">Action 2</a></li>
+        <li><a href="#">Action 3</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================
+       TOOLTIPS
+  ====================== -->
+  <section>
+    <h2>Tooltips</h2>
+    <button data-tooltip="This is a tooltip">Hover me</button>
+    <a href="#" data-tooltip="Link tooltip">Hover link</a>
+  </section>
+
+  <!-- ======================
+       MODAL
+  ====================== -->
+  <section>
+    <h2>Modal</h2>
+    <div class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <p>This is a modal window</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================
+       MODAL
+  ====================== -->
+  <section>
+    <h2>Utilities</h2>
+    <div class="utility demo-margin demo-padding demo-text-align demo-display">
+      <p>Margin, padding, text-align, display utilities demo</p>
+    </div>
+  </section>
+
+  <!-- ======================
+       FOOTER
+  ====================== -->
+  <footer class="demo-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Your Framework. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      /* TABS */
+      const tabs = document.querySelectorAll('.tabs .tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+        });
+      });
+
+      /* ACCORDION */
+      const accordions = document.querySelectorAll('.accordion-toggle');
+      accordions.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          const isOpen = content.style.display === 'block';
+          document.querySelectorAll('.accordion .accordion-content').forEach(c => c.style.display = 'none');
+          if(!isOpen) content.style.display = 'block';
+        });
+      });
+
+      /* MODAL */
+      const modal = document.querySelector('.modal');
+      const modalClose = document.querySelector('.modal-close');
+      setTimeout(() => { if(modal) modal.style.display = 'flex'; }, 1000);
+      if(modalClose) modalClose.addEventListener('click', () => modal.style.display = 'none');
+      if(modal) modal.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
+
+      /* DROPDOWNS */
+      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', e => {
+          e.preventDefault();
+          const menu = toggle.nextElementSibling;
+          menu.classList.toggle('show');
+        });
+      });
+      window.addEventListener('click', e => {
+        dropdownToggles.forEach(toggle => {
+          const menu = toggle.nextElementSibling;
+          if(!toggle.contains(e.target) && !menu.contains(e.target)) menu.classList.remove('show');
+        });
+      });
+
+      /* TOOLTIPS */
+      const tooltips = document.querySelectorAll('[data-tooltip]');
+      tooltips.forEach(el => {
+        const tip = document.createElement('span');
+        tip.className = 'tooltip';
+        tip.textContent = el.getAttribute('data-tooltip');
+        el.appendChild(tip);
+        el.addEventListener('mouseenter', () => tip.style.opacity = 1);
+        el.addEventListener('mouseleave', () => tip.style.opacity = 0);
+      });
+
+      /* PROGRESS BARS */
+      const progressBars = document.querySelectorAll('.progress-bar');
+      progressBars.forEach(bar => {
+        const width = parseInt(bar.style.width) || 0;
+        let progress = 0;
+        const interval = setInterval(() => {
+          if(progress >= width) clearInterval(interval);
+          else bar.style.width = progress + '%';
+          progress++;
+        }, 10);
+      });
+
+      /* SWITCH / TOGGLE */
+      const switches = document.querySelectorAll('.switch');
+      switches.forEach(sw => {
+        sw.addEventListener('change', () => {
+          if(sw.checked) sw.classList.add('on'); else sw.classList.remove('on');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

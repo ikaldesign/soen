@@ -1,0 +1,9 @@
+
+
+
+
+Color Palette
+
+Dark: https://huemint.com/brand-3/#palette=2e3440-d9dce0-6c7a8e-9ebec6
+
+Light: https://huemint.com/brand-3/#palette=f7f7f7-445566-888888-b0b3b6

@@ -1,0 +1,83 @@
+
+
+header
+main
+section
+footer
+nav
+article
+aside
+
+Typography
+  fonts
+  headings
+  paragraphs
+  small text
+  lead text
+  sizing examples
+
+Color palette
+
+Buttons & states (primary, secondary, accent, outline, disabled)
+
+Forms (inputs, textarea, select, radios, checkboxes, switches, range, file upload, date pickers, time pickers, autocomplete, input masks)
+
+Tables (regular, striped, hover)
+  with sorting, filtering, pagination – “data table” components
+
+Lists (unordered, ordered, description)
+
+Links
+
+Blockquotes
+
+Code and Pre
+
+Alerts
+
+Cards/panels
+  Cards with headers, footers, badges, images – more complex layouts
+
+Badges
+
+Media
+  Images
+  Videos
+  responsive video, audio players, image galleries
+
+Tooltips with positions and delay options – top, bottom, left, right
+
+Tabs
+
+Breadcrumbs
+
+Pagination/Stepper - multi-step navigation
+
+Modals
+
+Icons
+
+Grids => Flexbox & CSS Grid playground with gutters and responsive examples
+  Interactive grids – drag-and-drop, resizable columns, masonry layouts
+
+Accordions/collapse
+
+Progress Bars
+
+Loaders
+
+Spinners
+
+Dropdowns / Dropdown menu
+
+Avatar / Profile
+
+Utility Classes – margin, padding, text alignment, display helpers, etc.
+
+Toolbars / Action Bars – for admin or dashboard interfaces
+
+Carousels / Sliders – image or content sliders
+
+Notifications / Toasts – auto-disappearing messages
+
+Off-canvas menus / sidebars – for mobile or dashboard layouts
