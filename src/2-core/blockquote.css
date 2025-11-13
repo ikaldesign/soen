@@ -1,0 +1,13 @@
+blockquote {
+  display: block;
+  margin: var(--soen-typography-spacing-vertical) 0;
+  padding: var(--soen-spacing);
+  border-right: none;
+  border-left: 0.25rem solid var(--soen-blockquote-border-color);
+  border-inline-start: 0.25rem solid var(--soen-blockquote-border-color);
+  border-inline-end: none;
+}
+blockquote footer {
+  margin-top: calc(var(--soen-typography-spacing-vertical) * 0.5);
+  color: var(--soen-blockquote-footer-color);
+}

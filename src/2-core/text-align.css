@@ -1,0 +1,124 @@
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}
+@media only screen and (min-width: 2200px) {
+  .text-4xl-center {
+    text-align: center;
+  }
+  .text-4xl-left {
+    text-align: left;
+  }
+  .text-4xl-right {
+    text-align: right;
+  }
+  .text-4xl-justify {
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .text-3xl-center {
+    text-align: center;
+  }
+  .text-3xl-left {
+    text-align: left;
+  }
+  .text-3xl-right {
+    text-align: right;
+  }
+  .text-3xl-justify {
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .text-2xl-center {
+    text-align: center;
+  }
+  .text-2xl-left {
+    text-align: left;
+  }
+  .text-2xl-right {
+    text-align: right;
+  }
+  .text-2xl-justify {
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .text-xl-center {
+    text-align: center;
+  }
+  .text-xl-left {
+    text-align: left;
+  }
+  .text-xl-right {
+    text-align: right;
+  }
+  .text-xl-justify {
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .text-lg-center {
+    text-align: center;
+  }
+  .text-lg-left {
+    text-align: left;
+  }
+  .text-lg-right {
+    text-align: right;
+  }
+  .text-lg-justify {
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .text-md-center {
+    text-align: center;
+  }
+  .text-md-left {
+    text-align: left;
+  }
+  .text-md-right {
+    text-align: right;
+  }
+  .text-md-justify {
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .text-sm-center {
+    text-align: center;
+  }
+  .text-sm-left {
+    text-align: left;
+  }
+  .text-sm-right {
+    text-align: right;
+  }
+  .text-sm-justify {
+    text-align: justify;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .text-xs-center {
+    text-align: center;
+  }
+  .text-xs-left {
+    text-align: left;
+  }
+  .text-xs-right {
+    text-align: right;
+  }
+  .text-xs-justify {
+    text-align: justify;
+  }
+}

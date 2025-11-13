@@ -1,0 +1,13 @@
+body::-webkit-scrollbar {
+  width: var(--soen-scroll-track-width);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--soen-scroll-track);
+  box-shadow: inset 0 0 6px var(--soen-scroll-track);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--soen-scroll-thumb);
+  outline: 1px solid var(--soen-scroll-thumb);
+}

@@ -1,0 +1,85 @@
+.color-module {
+  border-radius: var(--soen-border-radius);
+  border: 1px solid var(--soen-light);
+  background: var(--soen-background-color);
+  color: var(--soen-color);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  margin-bottom: var(--soen-spacing);
+  position: relative;
+  overflow: hidden;
+}
+.color-module .color-desc {
+  font-weight: var(--soen-font-weight-bold);
+  font-size: var(--soen-font-size);
+  line-height: 1.3;
+  text-align: center;
+}
+.color-module.primary {
+  background-color: var(--soen-primary-background);
+  border: 1px solid var(--soen-primary-border);
+  color: var(--soen-primary-inverse);
+}
+.color-module.secondary {
+  background-color: var(--soen-secondary-background);
+  border: 1px solid var(--soen-secondary-border);
+  color: var(--soen-secondary-inverse);
+}
+.color-module.tertiary {
+  background-color: var(--soen-tertiary-background);
+  border: 1px solid var(--soen-tertiary-border);
+  color: var(--soen-tertiary-inverse);
+}
+.color-module.contrast {
+  background-color: var(--soen-contrast-background);
+  border: 1px solid var(--soen-contrast-border);
+  color: var(--soen-contrast-inverse);
+}
+.color-module.white {
+  background-color: var(--soen-white);
+  border: 1px solid var(--soen-white);
+  color: var(--soen-color);
+}
+.color-module.light {
+  background-color: var(--soen-light);
+  border: 1px solid var(--soen-light);
+  color: var(--soen-color);
+}
+.color-module.grey {
+  background-color: var(--soen-grey);
+  border: 1px solid var(--soen-grey);
+  color: var(--soen-color);
+}
+.color-module.dark {
+  background-color: var(--soen-dark);
+  border: 1px solid var(--soen-dark);
+  color: var(--soen-color-inverse);
+}
+.color-module.black {
+  background-color: var(--soen-black);
+  border: 1px solid var(--soen-black);
+  color: var(--soen-color-inverse);
+}
+.color-module.success {
+  background-color: var(--soen-success);
+  border: 1px solid var(--soen-success);
+  color: var(--soen-color-inverse);
+}
+.color-module.danger {
+  background-color: var(--soen-danger);
+  border: 1px solid var(--soen-danger);
+  color: var(--soen-color-inverse);
+}
+.color-module.warning {
+  background-color: var(--soen-warning);
+  border: 1px solid var(--soen-warning);
+  color: var(--soen-color-inverse);
+}
+.color-module.info {
+  background-color: var(--soen-info);
+  border: 1px solid var(--soen-info);
+  color: var(--soen-color-inverse);
+}

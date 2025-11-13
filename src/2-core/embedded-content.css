@@ -1,0 +1,71 @@
+:where(audio, canvas, iframe, img, svg, video) {
+  vertical-align: middle;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+:where(iframe) {
+  border-style: none;
+}
+
+.bg-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+
+  vertical-align: middle;
+  font-style: italic;
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+img.img-rounded {
+  border-radius: var(--soen-border-radius);
+}
+
+img.img-responsive {
+  height: auto;
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  img.img-responsive-xs {
+    height: auto;
+    width: 100%;
+  }
+}
+
+img.alignleft {
+  float: left;
+  margin: var(--soen-spacing) var(--soen-spacing) var(--soen-spacing) 0;
+}
+img.alignright {
+  float: right;
+  margin: var(--soen-spacing) 0 var(--soen-spacing) var(--soen-spacing);
+}
+
+:where(svg:not([fill])) {
+  fill: currentColor;
+}
+
+svg:not(:root),
+svg:not(:host) {
+  overflow: hidden;
+}

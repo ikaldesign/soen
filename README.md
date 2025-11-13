@@ -1,6 +1,6 @@
 # soen
 CSS Framework
-v0.3.9
+v0.3.10
 
 Tone: Calm, meditative, timeless. Feels like still water or reflection.
 Meaning / Origin: Derived from the Japanese Zen name “Sōen” (僧円), meaning simplicity, wisdom, or completeness.

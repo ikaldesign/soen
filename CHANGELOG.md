@@ -12,9 +12,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.3.10] - 2025-11-13
 
 - Selection colors
+- Blockquote
+- Embedded Content
+- Links
+- Scroll
+- Text Alignment
+- Color Module
    
 ### Changed
- 
+
 ### Fixed
  
 ### Added

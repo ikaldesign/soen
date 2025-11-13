@@ -1,3 +1,12 @@
+:root,
+:host {
+  --soen-white: #ffffff;
+  --soen-grey: #f9f9f9;
+  --soen-black: #000000;
+  --soen-light: #e9e9e9;
+  --soen-dark: #212121;
+}
+
 [data-theme=light],
 :root:not([data-theme=dark]),
 :host(:not([data-theme=dark])) {
@@ -5,9 +14,20 @@
   --soen-background-color: #fff;
   --soen-color: #373c44;
   --soen-color-inverse: #fff;
+
   --soen-text-selection-color: rgba(2, 154, 232, 0.25);
+  
   --soen-muted-color: #646b79;
   --soen-muted-border-color: rgb(231, 234, 239.5);
+
+  --soen-success: #28a745;
+  --soen-danger: #dc3545;
+  --soen-warning: #ffc107;
+  --soen-info: #17a2b8;
+
+  --soen-scroll-track: var(--soen-muted-border-color);
+  --soen-scroll-thumb: var(--soen-primary);
+  
   --soen-primary: #0172ad;
   --soen-primary-background: #0172ad;
   --soen-primary-border: var(--soen-primary-background);
@@ -18,6 +38,7 @@
   --soen-primary-hover-underline: var(--soen-primary-hover);
   --soen-primary-focus: rgba(2, 154, 232, 0.5);
   --soen-primary-inverse: #fff;
+  
   --soen-secondary: #5d6b89;
   --soen-secondary-background: #525f7a;
   --soen-secondary-border: var(--soen-secondary-background);
@@ -28,6 +49,18 @@
   --soen-secondary-hover-underline: var(--soen-secondary-hover);
   --soen-secondary-focus: rgba(93, 107, 137, 0.25);
   --soen-secondary-inverse: #fff;
+
+  --soen-tertiary: #5d6b89;
+  --soen-tertiary-background: #525f7a;
+  --soen-tertiary-border: var(--soen-tertiary-background);
+  --soen-tertiary-underline: rgba(93, 107, 137, 0.5);
+  --soen-tertiary-hover: #48536b;
+  --soen-tertiary-hover-background: #48536b;
+  --soen-tertiary-hover-border: var(--soen-tertiary-hover-background);
+  --soen-tertiary-hover-underline: var(--soen-tertiary-hover);
+  --soen-tertiary-focus: rgba(93, 107, 137, 0.25);
+  --soen-tertiary-inverse: #fff;
+  
   --soen-contrast: #181c25;
   --soen-contrast-background: #181c25;
   --soen-contrast-border: var(--soen-contrast-background);
@@ -38,27 +71,36 @@
   --soen-contrast-hover-underline: var(--soen-secondary-hover);
   --soen-contrast-focus: rgba(93, 107, 137, 0.25);
   --soen-contrast-inverse: #fff;
+  
   --soen-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(129, 145, 181, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(129, 145, 181, 0.024), 0.0625rem 0.125rem 0.75rem rgba(129, 145, 181, 0.03), 0.1125rem 0.225rem 1.35rem rgba(129, 145, 181, 0.036), 0.2085rem 0.417rem 2.502rem rgba(129, 145, 181, 0.04302), 0.5rem 1rem 6rem rgba(129, 145, 181, 0.06), 0 0 0 0.0625rem rgba(129, 145, 181, 0.015);
+  
   --soen-h1-color: #2d3138;
   --soen-h2-color: #373c44;
   --soen-h3-color: #424751;
   --soen-h4-color: #4d535e;
   --soen-h5-color: #5c6370;
   --soen-h6-color: #646b79;
+  
   --soen-mark-background-color: rgb(252.5, 230.5, 191.5);
   --soen-mark-color: #0f1114;
+  
   --soen-ins-color: rgb(28.5, 105.5, 84);
   --soen-del-color: rgb(136, 56.5, 53);
+  
   --soen-blockquote-border-color: var(--soen-muted-border-color);
   --soen-blockquote-footer-color: var(--soen-muted-color);
+  
   --soen-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --soen-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  
   --soen-table-border-color: var(--soen-muted-border-color);
   --soen-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
+  
   --soen-code-background-color: rgb(243, 244.5, 246.75);
   --soen-code-color: #646b79;
   --soen-code-kbd-background-color: var(--soen-color);
   --soen-code-kbd-color: var(--soen-background-color);
+  
   --soen-form-element-background-color: rgb(251, 251.5, 252.25);
   --soen-form-element-selected-background-color: #dfe3eb;
   --soen-form-element-border-color: #cfd5e2;
@@ -74,34 +116,44 @@
   --soen-form-element-valid-border-color: rgb(76, 154.5, 137.5);
   --soen-form-element-valid-active-border-color: rgb(39, 152.75, 118.75);
   --soen-form-element-valid-focus-color: var(--soen-form-element-valid-active-border-color);
+  
   --soen-switch-background-color: #bfc7d9;
   --soen-switch-checked-background-color: var(--soen-primary-background);
   --soen-switch-color: #fff;
   --soen-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  
   --soen-range-border-color: #dfe3eb;
   --soen-range-active-border-color: #bfc7d9;
   --soen-range-thumb-border-color: var(--soen-background-color);
   --soen-range-thumb-color: var(--soen-secondary-background);
   --soen-range-thumb-active-color: var(--soen-primary-background);
+  
   --soen-accordion-border-color: var(--soen-muted-border-color);
   --soen-accordion-active-summary-color: var(--soen-primary-hover);
   --soen-accordion-close-summary-color: var(--soen-color);
   --soen-accordion-open-summary-color: var(--soen-muted-color);
+  
   --soen-card-background-color: var(--soen-background-color);
   --soen-card-border-color: var(--soen-muted-border-color);
   --soen-card-box-shadow: var(--soen-box-shadow);
   --soen-card-sectioning-background-color: rgb(251, 251.5, 252.25);
+  
   --soen-dropdown-background-color: #fff;
   --soen-dropdown-border-color: #eff1f4;
   --soen-dropdown-box-shadow: var(--soen-box-shadow);
   --soen-dropdown-color: var(--soen-color);
   --soen-dropdown-hover-background-color: #eff1f4;
+  
   --soen-loading-spinner-opacity: 0.5;
+  
   --soen-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
+  
   --soen-progress-background-color: #dfe3eb;
   --soen-progress-color: var(--soen-primary-background);
+  
   --soen-tooltip-background-color: var(--soen-contrast-background);
   --soen-tooltip-color: var(--soen-contrast-inverse);
+  
   --soen-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(76, 154.5, 137.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   --soen-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(200.25, 79.25, 72.25)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
 }
@@ -133,9 +185,12 @@
     --soen-background-color: rgb(19, 22.5, 30.5);
     --soen-color: #c2c7d0;
     --soen-color-inverse: rgb(19, 22.5, 30.5);
+    
     --soen-text-selection-color: rgba(1, 170, 255, 0.1875);
+    
     --soen-muted-color: #7b8495;
     --soen-muted-border-color: #202632;
+    
     --soen-primary: #01aaff;
     --soen-primary-background: #0172ad;
     --soen-primary-border: var(--soen-primary-background);
@@ -146,6 +201,7 @@
     --soen-primary-hover-underline: var(--soen-primary-hover);
     --soen-primary-focus: rgba(1, 170, 255, 0.375);
     --soen-primary-inverse: #fff;
+    
     --soen-secondary: #969eaf;
     --soen-secondary-background: #525f7a;
     --soen-secondary-border: var(--soen-secondary-background);
@@ -156,6 +212,7 @@
     --soen-secondary-hover-underline: var(--soen-secondary-hover);
     --soen-secondary-focus: rgba(144, 158, 190, 0.25);
     --soen-secondary-inverse: #fff;
+    
     --soen-contrast: #dfe3eb;
     --soen-contrast-background: #eff1f4;
     --soen-contrast-border: var(--soen-contrast-background);
@@ -166,27 +223,36 @@
     --soen-contrast-hover-underline: var(--soen-contrast-hover);
     --soen-contrast-focus: rgba(207, 213, 226, 0.25);
     --soen-contrast-inverse: #000;
+    
     --soen-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
+    
     --soen-h1-color: #f0f1f3;
     --soen-h2-color: #e0e3e7;
     --soen-h3-color: #c2c7d0;
     --soen-h4-color: #b3b9c5;
     --soen-h5-color: #a4acba;
     --soen-h6-color: #8891a4;
+    
     --soen-mark-background-color: #014063;
     --soen-mark-color: #fff;
+    
     --soen-ins-color: #62af9a;
     --soen-del-color: rgb(205.5, 126, 123);
+    
     --soen-blockquote-border-color: var(--soen-muted-border-color);
     --soen-blockquote-footer-color: var(--soen-muted-color);
+    
     --soen-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --soen-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    
     --soen-table-border-color: var(--soen-muted-border-color);
     --soen-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
+    
     --soen-code-background-color: rgb(26, 30.5, 40.25);
     --soen-code-color: #8891a4;
     --soen-code-kbd-background-color: var(--soen-color);
     --soen-code-kbd-color: var(--soen-background-color);
+    
     --soen-form-element-background-color: rgb(28, 33, 43.5);
     --soen-form-element-selected-background-color: #2a3140;
     --soen-form-element-border-color: #2a3140;
@@ -202,34 +268,44 @@
     --soen-form-element-valid-border-color: #2a7b6f;
     --soen-form-element-valid-active-border-color: rgb(22, 137, 105.5);
     --soen-form-element-valid-focus-color: var(--soen-form-element-valid-active-border-color);
+    
     --soen-switch-background-color: #333c4e;
     --soen-switch-checked-background-color: var(--soen-primary-background);
     --soen-switch-color: #fff;
     --soen-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    
     --soen-range-border-color: #202632;
     --soen-range-active-border-color: #2a3140;
     --soen-range-thumb-border-color: var(--soen-background-color);
     --soen-range-thumb-color: var(--soen-secondary-background);
     --soen-range-thumb-active-color: var(--soen-primary-background);
+    
     --soen-accordion-border-color: var(--soen-muted-border-color);
     --soen-accordion-active-summary-color: var(--soen-primary-hover);
     --soen-accordion-close-summary-color: var(--soen-color);
     --soen-accordion-open-summary-color: var(--soen-muted-color);
+    
     --soen-card-background-color: #181c25;
     --soen-card-border-color: var(--soen-card-background-color);
     --soen-card-box-shadow: var(--soen-box-shadow);
     --soen-card-sectioning-background-color: rgb(26, 30.5, 40.25);
+    
     --soen-dropdown-background-color: #181c25;
     --soen-dropdown-border-color: #202632;
     --soen-dropdown-box-shadow: var(--soen-box-shadow);
     --soen-dropdown-color: var(--soen-color);
     --soen-dropdown-hover-background-color: #202632;
+    
     --soen-loading-spinner-opacity: 0.5;
+    
     --soen-modal-overlay-background-color: rgba(7.5, 8.5, 10, 0.75);
+    
     --soen-progress-background-color: #202632;
     --soen-progress-color: var(--soen-primary-background);
+    
     --soen-tooltip-background-color: var(--soen-contrast-background);
     --soen-tooltip-color: var(--soen-contrast-inverse);
+    
     --soen-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
     --soen-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149.5, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
   }
@@ -269,9 +345,12 @@
   --soen-background-color: rgb(19, 22.5, 30.5);
   --soen-color: #c2c7d0;
   --soen-color-inverse: rgb(19, 22.5, 30.5);
+  
   --soen-text-selection-color: rgba(1, 170, 255, 0.1875);
+  
   --soen-muted-color: #7b8495;
   --soen-muted-border-color: #202632;
+  
   --soen-primary: #01aaff;
   --soen-primary-background: #0172ad;
   --soen-primary-border: var(--soen-primary-background);
@@ -282,6 +361,7 @@
   --soen-primary-hover-underline: var(--soen-primary-hover);
   --soen-primary-focus: rgba(1, 170, 255, 0.375);
   --soen-primary-inverse: #fff;
+  
   --soen-secondary: #969eaf;
   --soen-secondary-background: #525f7a;
   --soen-secondary-border: var(--soen-secondary-background);
@@ -292,6 +372,7 @@
   --soen-secondary-hover-underline: var(--soen-secondary-hover);
   --soen-secondary-focus: rgba(144, 158, 190, 0.25);
   --soen-secondary-inverse: #fff;
+  
   --soen-contrast: #dfe3eb;
   --soen-contrast-background: #eff1f4;
   --soen-contrast-border: var(--soen-contrast-background);
@@ -302,27 +383,36 @@
   --soen-contrast-hover-underline: var(--soen-contrast-hover);
   --soen-contrast-focus: rgba(207, 213, 226, 0.25);
   --soen-contrast-inverse: #000;
+  
   --soen-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
+  
   --soen-h1-color: #f0f1f3;
   --soen-h2-color: #e0e3e7;
   --soen-h3-color: #c2c7d0;
   --soen-h4-color: #b3b9c5;
   --soen-h5-color: #a4acba;
   --soen-h6-color: #8891a4;
+  
   --soen-mark-background-color: #014063;
   --soen-mark-color: #fff;
+  
   --soen-ins-color: #62af9a;
   --soen-del-color: rgb(205.5, 126, 123);
+  
   --soen-blockquote-border-color: var(--soen-muted-border-color);
   --soen-blockquote-footer-color: var(--soen-muted-color);
+  
   --soen-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --soen-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  
   --soen-table-border-color: var(--soen-muted-border-color);
   --soen-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
+  
   --soen-code-background-color: rgb(26, 30.5, 40.25);
   --soen-code-color: #8891a4;
   --soen-code-kbd-background-color: var(--soen-color);
   --soen-code-kbd-color: var(--soen-background-color);
+  
   --soen-form-element-background-color: rgb(28, 33, 43.5);
   --soen-form-element-selected-background-color: #2a3140;
   --soen-form-element-border-color: #2a3140;
@@ -338,34 +428,44 @@
   --soen-form-element-valid-border-color: #2a7b6f;
   --soen-form-element-valid-active-border-color: rgb(22, 137, 105.5);
   --soen-form-element-valid-focus-color: var(--soen-form-element-valid-active-border-color);
+  
   --soen-switch-background-color: #333c4e;
   --soen-switch-checked-background-color: var(--soen-primary-background);
   --soen-switch-color: #fff;
   --soen-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  
   --soen-range-border-color: #202632;
   --soen-range-active-border-color: #2a3140;
   --soen-range-thumb-border-color: var(--soen-background-color);
   --soen-range-thumb-color: var(--soen-secondary-background);
   --soen-range-thumb-active-color: var(--soen-primary-background);
+  
   --soen-accordion-border-color: var(--soen-muted-border-color);
   --soen-accordion-active-summary-color: var(--soen-primary-hover);
   --soen-accordion-close-summary-color: var(--soen-color);
   --soen-accordion-open-summary-color: var(--soen-muted-color);
+  
   --soen-card-background-color: #181c25;
   --soen-card-border-color: var(--soen-card-background-color);
   --soen-card-box-shadow: var(--soen-box-shadow);
   --soen-card-sectioning-background-color: rgb(26, 30.5, 40.25);
+  
   --soen-dropdown-background-color: #181c25;
   --soen-dropdown-border-color: #202632;
   --soen-dropdown-box-shadow: var(--soen-box-shadow);
   --soen-dropdown-color: var(--soen-color);
   --soen-dropdown-hover-background-color: #202632;
+  
   --soen-loading-spinner-opacity: 0.5;
+  
   --soen-modal-overlay-background-color: rgba(7.5, 8.5, 10, 0.75);
+  
   --soen-progress-background-color: #202632;
   --soen-progress-color: var(--soen-primary-background);
+  
   --soen-tooltip-background-color: var(--soen-contrast-background);
   --soen-tooltip-color: var(--soen-contrast-inverse);
+  
   --soen-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   --soen-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149.5, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
 }
