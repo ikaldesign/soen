@@ -4,6 +4,7 @@
   color-scheme: light;
   --soen-background-color: #fff;
   --soen-color: #373c44;
+  --soen-color-inverse: #fff;
   --soen-text-selection-color: rgba(2, 154, 232, 0.25);
   --soen-muted-color: #646b79;
   --soen-muted-border-color: rgb(231, 234, 239.5);
@@ -131,6 +132,7 @@
     color-scheme: dark;
     --soen-background-color: rgb(19, 22.5, 30.5);
     --soen-color: #c2c7d0;
+    --soen-color-inverse: rgb(19, 22.5, 30.5);
     --soen-text-selection-color: rgba(1, 170, 255, 0.1875);
     --soen-muted-color: #7b8495;
     --soen-muted-border-color: #202632;
@@ -266,6 +268,7 @@
   color-scheme: dark;
   --soen-background-color: rgb(19, 22.5, 30.5);
   --soen-color: #c2c7d0;
+  --soen-color-inverse: rgb(19, 22.5, 30.5);
   --soen-text-selection-color: rgba(1, 170, 255, 0.1875);
   --soen-muted-color: #7b8495;
   --soen-muted-border-color: #202632;

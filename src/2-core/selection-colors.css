@@ -1,0 +1,23 @@
+::selection {
+  background-color: var(--soen-text-selection-color);
+  color: var(--soen-color-inverse);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background-color: var(--soen-text-selection-color);
+  color: var(--soen-color-inverse);
+  text-shadow: none;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+body {
+  -webkit-tap-highlight-color: var(--soen-text-selection-color);
+}
