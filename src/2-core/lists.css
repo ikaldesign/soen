@@ -1,0 +1,97 @@
+:where(ol, ul) li {
+  margin-bottom: calc(var(--soen-typography-spacing-vertical) * 0.25);
+}
+
+:where(dl, ol, ul) :where(dl, ol, ul) {
+  margin: 0;
+  margin-top: calc(var(--soen-typography-spacing-vertical) * 0.25);
+}
+
+ul li {
+  list-style: square;
+}
+
+ul,
+ol {
+  padding-left: var(--soen-spacing);
+}
+
+/* No List */
+ol.no-list,
+ul.no-list {
+  padding: 0;
+}
+ol.no-list li,
+ul.no-list li {
+  list-style: none;
+  padding: 0;
+}
+
+/* Inline List */
+ol.inline-list,
+ul.inline-list {
+  padding-left: 0;
+  list-style: none;
+}
+ol.inline-list li,
+ul.inline-list li {
+  display: inline-block;
+  margin-right: calc(var(--soen-spacing) / 2);
+  margin-left: calc(var(--soen-spacing) / 2);
+}
+ol.inline-list li:first-of-type,
+ul.inline-list li:first-of-type {
+  margin-left: 0;
+}
+ol.inline-list li:last-of-type,
+ul.inline-list li:last-of-type {
+  margin-right: 0;
+}
+
+
+/* Two Column */
+ol.two-column,
+ul.two-column {
+  column-count: 2;
+  /* column-rule: 2px solid #AAA; */
+  column-fill: balance;
+  -webkit-column-gap: normal;
+  -moz-column-gap: normal;
+  column-gap: normal;
+}
+
+/* Three Column */
+ol.three-column,
+ul.three-column {
+  column-count: 3;
+  /* column-rule: 2px solid #AAA; */
+  column-fill: balance;
+  -webkit-column-gap: normal;
+  -moz-column-gap: normal;
+  column-gap: normal;
+}
+@media only screen and (max-width: 767px) {
+  ol.two-column,
+  ol.three-column,
+  ul.two-column,
+  ul.three-column {
+    column-count: 1 !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  ol.two-column,
+  ol.three-column,
+  ul.two-column,
+  ul.three-column {
+    column-count: 2 !important;
+  }
+}
+
+
+mark {
+  padding: 0.125rem 0.25rem;
+  background-color: var(--soen-mark-background-color);
+  color: var(--soen-mark-color);
+  vertical-align: baseline;
+}
+

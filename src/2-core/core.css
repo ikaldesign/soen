@@ -1,0 +1,87 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-repeat: no-repeat;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+:where(:root),
+:where(:host) {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: var(--soen-background-color);
+  color: var(--soen-color);
+  font-weight: var(--soen-font-weight);
+  font-size: var(--soen-font-size);
+  line-height: var(--soen-line-height);
+  font-family: var(--soen-font-family);
+  text-underline-offset: var(--soen-text-underline-offset);
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
+
+html {
+  -ms-overflow-style: scrollbar;
+  overflow-x: hidden;
+  max-width: 100vw;
+  font-size: var(--soen-font-size);
+}
+
+body {
+  width: 100%;
+  margin: 0;
+
+  position: relative;
+  height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, .main {
+  position: relative;
+  /* display: block; */
+  flex: 1;
+  padding: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 767px) {
+  main::before, .main::before {
+    display: none;
+  }
+}
+
+body > header,
+body > main,
+body > footer {
+  padding-block: var(--soen-block-spacing-vertical);
+}
+
+
+.overflow-auto {
+  overflow: auto;
+}

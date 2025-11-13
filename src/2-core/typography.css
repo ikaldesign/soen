@@ -1,0 +1,159 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: var(--soen-typography-spacing-vertical);
+  color: var(--soen-color);
+  font-weight: var(--soen-font-weight);
+  font-size: var(--soen-font-size);
+  line-height: var(--soen-line-height);
+  font-family: var(--soen-font-family);
+}
+
+h1 {
+  --soen-color: var(--soen-h1-color);
+}
+
+h2 {
+  --soen-color: var(--soen-h2-color);
+}
+
+h3 {
+  --soen-color: var(--soen-h3-color);
+}
+
+h4 {
+  --soen-color: var(--soen-h4-color);
+}
+
+h5 {
+  --soen-color: var(--soen-h5-color);
+}
+
+h6 {
+  --soen-color: var(--soen-h6-color);
+}
+
+:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: var(--soen-typography-spacing-top);
+}
+
+p {
+  margin-bottom: var(--soen-typography-spacing-vertical);
+}
+
+.lead {
+  font-size: calc(var(--soen-font-size) + 1px);
+}
+
+hgroup {
+  margin-bottom: var(--soen-typography-spacing-vertical);
+}
+hgroup > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+hgroup > *:not(:first-child):last-child {
+  --soen-color: var(--soen-muted-color);
+  --soen-font-weight: unset;
+  font-size: 1rem;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  text-decoration: none;
+  cursor: help;
+}
+
+ins {
+  color: var(--soen-ins-color);
+  text-decoration: none;
+}
+
+del {
+  color: var(--soen-del-color);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+
+b,
+strong {
+  font-weight: var(--soen-font-weight-bold);
+}
+
+i,em {
+  font-style: italic;
+}
+
+.thin {
+  font-weight: var(--soen-font-weight-thin);
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+address,
+blockquote,
+dl,
+ol,
+p,
+pre,
+table,
+ul {
+  margin-top: 0;
+  margin-bottom: var(--soen-typography-spacing-vertical);
+  color: var(--soen-color);
+  font-style: normal;
+  font-weight: var(--soen-font-weight);
+}
+
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.truncate-two-line-clamp,
+.truncate-three-line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  overflow: hidden;
+}
+.truncate-two-line-clamp {
+  -webkit-line-clamp: 2;
+}
+.truncate-three-line-clamp {
+  -webkit-line-clamp: 3;
+}
+
+/* hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+  padding: 0;
+} */
