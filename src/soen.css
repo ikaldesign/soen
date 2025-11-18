@@ -17,7 +17,9 @@
 @import '2-core/lists.css';
 @import '2-core/links.css';
 @import '2-core/scroll.css';
+@import '2-core/colors.css';
 @import '2-core/selection-colors.css';
 @import '2-core/blockquote.css';
 @import '2-core/text-align.css';
 @import '2-core/embedded-content.css';
+@import '2-core/hidden';

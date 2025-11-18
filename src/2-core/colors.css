@@ -1,0 +1,24 @@
+.primary-color {
+ color: var(--soen-primary);
+}
+.secondary-color {
+  color: var(--soen-secondary);
+}
+.tertiary-color {
+  color: var(--soen-tertiary);
+}
+/* .accent-color {
+  color: $accent-color;
+}
+.success-color {
+  color: $success-color;
+}
+.danger-color {
+  color: $danger-color;
+}
+.warning-color {
+  color: $warning-color;
+}
+.info-color {
+  color: $info-color;
+} */
