@@ -7,3 +7,48 @@ Color Palette
 Dark: https://huemint.com/brand-3/#palette=2e3440-d9dce0-6c7a8e-9ebec6
 
 Light: https://huemint.com/brand-3/#palette=f7f7f7-445566-888888-b0b3b6
+
+
+
+768 - sm
+1024 - md
+1280 - lg
+1440 - xl
+1600 - 2xl
+1920 - 3xl
+2200 - 4xl
+
+
+.text-xs {
+  /* min 576px */
+  --soen-font-size: 106.25%;
+  font-size: var(--soen-font-size);
+}
+.text-sm {
+  /* min 768px */
+  --soen-font-size: 112.5%;
+  font-size: var(--soen-font-size);
+}
+.text-md {
+  /* min 1024px */
+  --soen-font-size: 118.75%;
+  font-size: var(--soen-font-size);
+}
+.text-lg {
+  /* min 1280 */
+  --soen-font-size: 125%;
+  font-size: var(--soen-font-size);
+}
+.text-xl {
+  /* min 1536 */
+  --soen-font-size: 131.25%;
+  font-size: var(--soen-font-size);
+}
+.text-2xl {
+  --soen-font-size: 137.5%;
+  font-size: var(--soen-font-size);
+}
+.text-3xl {
+  --soen-font-size: 143.75%;
+  font-size: var(--soen-font-size);
+}
